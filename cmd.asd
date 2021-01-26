@@ -11,3 +11,9 @@
   :in-order-to ((test-op (load-op "cmd/test")))
   :perform (test-op (o c) (symbol-call :cmd/test :run-tests))
   :components ((:file "cmd")))
+
+(defsystem "cmd/readtable"
+  :description "Special syntax for running external programs"
+  :serial t
+  :class :package-inferred-system
+  :depends-on ("cmd/readtable"))
